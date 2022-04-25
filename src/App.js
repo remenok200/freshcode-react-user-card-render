@@ -86,12 +86,12 @@ function App() {
     },
   ];
 
-  const userCards = responseData.map(({id, firstName, lastName, profilepicture}, index) => (
+  const userCards = responseData.map(({id, firstName, lastName, profilePicture}, index) => (
     <UserCard 
       id = {id}
       firstName = {firstName}
       lastName = {lastName}
-      profilepicture = {profilepicture}
+      profilePicture = {profilePicture}
     />
   ))
 
