@@ -7,6 +7,13 @@ class UserCard extends React.Component {
     }
 
     render() {
+        const getInitials = (str) => {
+            const wordsArr = str.split(' ');
+            const initialsArr = wordsArr.map((word) => word[0]);
+            const initialsStr = initialsArr.join(' ');
+            return initialsStr;
+          };
+
         const {
             id,
             firstName = 'Unkown',
@@ -20,6 +27,7 @@ class UserCard extends React.Component {
                 <article className="cardContainer" id={id}>
                 <div className="cardImgWrapper">
                     <img className="cardImg" src={profilePicture} alt={firstName + ' ' + lastName + ' ' + 'photo'} />
+                    <div className="initials">{getInitials(firstName + ' ' + lastName)}</div>
                 </div>
                 <h2 className='cardName'>{firstName + ' ' + lastName}</h2>
                 <p className="cardDescription">{cardDescription}</p>
