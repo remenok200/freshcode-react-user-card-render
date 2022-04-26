@@ -29,13 +29,13 @@ class UserCard extends React.Component {
             <img
               className="cardImg"
               src={profilePicture}
-              alt={firstName + " " + lastName + " " + "photo"}
+              alt={`${firstName} ${lastName} photo`}
             />
             <div className="initials">
-              {getInitials(firstName + " " + lastName)}
+              {getInitials(`${firstName} ${lastName}`)}
             </div>
           </div>
-          <h2 className="cardName">{firstName + " " + lastName}</h2>
+          <h2 className="cardName">{`${firstName} ${lastName}`}</h2>
           <p className="cardDescription">{cardDescription}</p>
         </article>
       </li>
