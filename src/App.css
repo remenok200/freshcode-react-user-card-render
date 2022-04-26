@@ -8,12 +8,6 @@
   margin: 0 auto;
 }
 
-.userCardsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
 .main-header {
   font-weight: bold;
   font-size: 3rem;
