@@ -1,12 +1,12 @@
-import { render } from "@testing-library/react";
 import "./App.css";
+import Header from "./components/Header";
 import UserCardsList from "./components/UserCardsList";
 
 function App() {
   return (
     <>
       <main className="container">
-        <h1 className="main-header">OUR team</h1>
+        <Header />
         <UserCardsList />
       </main>
     </>
