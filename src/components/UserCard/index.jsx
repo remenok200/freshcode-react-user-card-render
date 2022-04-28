@@ -2,8 +2,12 @@ import React from "react";
 import "./style.css";
 
 class UserCard extends React.Component {
-  constructor(user) {
-    super(user);
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loadImgError: false,
+    };
   }
 
   render() {
@@ -26,14 +30,18 @@ class UserCard extends React.Component {
       <li className="userCardWrapper">
         <article className="cardContainer" id={id}>
           <div className="cardImgWrapper">
-            <img
-              className="cardImg"
-              src={profilePicture}
-              alt={`${firstName} ${lastName} photo`}
-            />
-            <div className="initials">
-              {getInitials(`${firstName} ${lastName}`)}
-            </div>
+            {profilePicture && !this.state.loadImgError ? (
+              <img
+                className="cardImg"
+                src={profilePicture}
+                alt={`${firstName} ${lastName}`}
+                onError={() => this.setState({ loadImgError: true })}
+              />
+            ) : (
+              <div className="initials">
+                {getInitials(`${firstName} ${lastName}`)}
+              </div>
+            )}
           </div>
           <h2 className="cardName">{`${firstName} ${lastName}`}</h2>
           <p className="cardDescription">{cardDescription}</p>
